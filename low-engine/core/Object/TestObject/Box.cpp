@@ -38,53 +38,47 @@ void lowengine::Box::Draw()
     {0.0, 1.0, 0.0},
   };
 
-  //glBegin(GL_LINES);
+  glBegin(GL_LINES);
 
-  //  // bottom
-  //  for (int i = 0; i < 4; i++)
-  //  {
-  //    glVertex3fv(v1[i]);
-  //    glVertex3fv(v1[i+1]);
-  //  }
+    // bottom
+    for (int i = 0; i < 4; i++)
+    {
+      glVertex3fv(v1[i]);
+      glVertex3fv(v1[i+1]);
+    }
 
-  //  // top
-  //  for (int i = 0; i < 4; i++)
-  //  {
-  //    glVertex3fv(v2[i]);
-  //    glVertex3fv(v2[i + 1]);
-  //  }
+    // top
+    for (int i = 0; i < 4; i++)
+    {
+      glVertex3fv(v2[i]);
+      glVertex3fv(v2[i + 1]);
+    }
 
-  //  // vertices
-  //  for (int i = 0; i < 4; i++)
-  //  {
-  //    glVertex3fv(v1[i]);
-  //    glVertex3fv(v2[i]);
-  //  }
+    // vertices
+    for (int i = 0; i < 4; i++)
+    {
+      glVertex3fv(v1[i]);
+      glVertex3fv(v2[i]);
+    }
 
-  //  // x
-  //  //for (int i = 0; i < 4; i++)
-  //  //{
-  //  //  glVertex3fv(v1[i]);
-  //  //  glVertex3fv(v2[i+1]);
-  //  //  glVertex3fv(v1[i+1]);
-  //  //  glVertex3fv(v2[i]);
-  //  //}
-  //  //
-  //  //glVertex3fv(v1[0]);
-  //  //glVertex3fv(v1[2]);
-  //  //glVertex3fv(v1[1]);
-  //  //glVertex3fv(v1[3]);
-  //  //
-  //  //glVertex3fv(v2[0]);
-  //  //glVertex3fv(v2[2]);
-  //  //glVertex3fv(v2[1]);
-  //  //glVertex3fv(v2[3]);
+    // x
+    //for (int i = 0; i < 4; i++)
+    //{
+    //  glVertex3fv(v1[i]);
+    //  glVertex3fv(v2[i+1]);
+    //  glVertex3fv(v1[i+1]);
+    //  glVertex3fv(v2[i]);
+    //}
+    //
+    //glVertex3fv(v1[0]);
+    //glVertex3fv(v1[2]);
+    //glVertex3fv(v1[1]);
+    //glVertex3fv(v1[3]);
+    //
+    //glVertex3fv(v2[0]);
+    //glVertex3fv(v2[2]);
+    //glVertex3fv(v2[1]);
+    //glVertex3fv(v2[3]);
 
-  //glEnd();
-  glBegin(GL_QUADS);
-  glTexCoord2f(0.0f, 1.0f); glVertex2f(0.0f, 0.0f);
-  glTexCoord2f(1.0f, 1.0f); glVertex2f(1.0, 0.0f);
-  glTexCoord2f(1.0f, 0.0f); glVertex2f(1.0, 1.0);
-  glTexCoord2f(0.0f, 0.0f); glVertex2f(0.0f, 1.0);
   glEnd();
 }

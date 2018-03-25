@@ -25,7 +25,7 @@ void lowengine::Display::Initialize()
   glShadeModel(GL_SMOOTH);
   glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
   glutSetCursor(GLUT_CURSOR_NONE);
-
+  
   camera.SetPin((GLfloat)width / 2, (GLfloat)height/2);
 }
 

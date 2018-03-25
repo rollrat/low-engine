@@ -23,6 +23,8 @@ lowengine::Render::Render()
   setupCallback();
 
   display.Initialize();
+
+  glewInit();
 }
 
 static lowengine::Display* display_instance;

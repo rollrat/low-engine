@@ -10,6 +10,9 @@
 //
 //===----------------------------------------------------------------------===//
 
+#include <gl/glew.h>
+#include <glfw/glfw3.h>
+
 #include "Texture.h"
 
 #include <stdio.h>

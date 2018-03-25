@@ -13,6 +13,7 @@
 #ifndef _LOWENGINE_DISPLAY_
 #define _LOWENGINE_DISPLAY_
 
+#include <gl\glew.h>
 #include <glut.h>
 #include <vector>
 #include <Object\Object.h>
