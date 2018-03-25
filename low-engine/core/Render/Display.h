@@ -29,6 +29,7 @@ class Display
   std::vector<Object*> display_objs;
   Camera camera;
   Keyboard keyboard;
+  bool print_fps = true;
 
 public:
 
@@ -45,6 +46,7 @@ public:
 private:
   void adjustPerspective();
   void processKeyboardMove();
+  void updateFps();
 };
 
 }

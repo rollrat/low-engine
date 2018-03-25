@@ -12,6 +12,10 @@
 
 #include "Display.h"
 
+#include <Object\Text.h>
+
+GLfloat fps;
+
 void lowengine::Display::Initialize()
 {
   glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
@@ -40,6 +44,11 @@ void lowengine::Display::DisplayCallback()
     obj->Draw();
   }
 
+  if (print_fps)
+  {
+    (new RasterText(0.0,10.0,0.0,width,height,std::string("FPS: ")+std::to_string(fps)))->Draw();
+  }
+
   glutSwapBuffers();
 }
 
@@ -62,6 +71,7 @@ void lowengine::Display::TimerCallback(int value)
 {
   // TODO: timer processing
   processKeyboardMove();
+  updateFps();
 
   glutPostRedisplay();
   glutTimerFunc(1, timerCallback, 0);
@@ -88,4 +98,19 @@ void lowengine::Display::processKeyboardMove()
     camera.MoveUp(1);
   if (keyboard.NormalKeyStatus('v'))
     camera.MoveDown(1);
+}
+
+static int frame=0,time=0,timebase=0;
+
+void lowengine::Display::updateFps()
+{
+  frame++;
+  time = glutGet(GLUT_ELAPSED_TIME);
+
+  if (time - timebase > 1000)
+  {
+    fps = frame * 1000.0 / (time - timebase);
+    timebase = time;
+    frame = 0;
+  }
 }

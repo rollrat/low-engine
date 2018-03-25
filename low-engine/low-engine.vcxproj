@@ -128,7 +128,9 @@
     <ClInclude Include="core\Object\TestObject\Grid.h" />
     <ClInclude Include="core\Object\Object.h" />
     <ClInclude Include="core\Object\TestObject\RGBBox.h" />
+    <ClInclude Include="core\Object\Text.h" />
     <ClInclude Include="core\Render\Display.h" />
+    <ClInclude Include="core\Render\Light.h" />
     <ClInclude Include="core\Render\Render.h" />
     <ClInclude Include="glutdlls37beta\glut.h" />
   </ItemGroup>
@@ -138,6 +140,7 @@
     <ClCompile Include="core\Object\TestObject\Box.cpp" />
     <ClCompile Include="core\Object\TestObject\Grid.cpp" />
     <ClCompile Include="core\Object\TestObject\RGBBox.cpp" />
+    <ClCompile Include="core\Object\Text.cpp" />
     <ClCompile Include="core\Render\Display.cpp" />
     <ClCompile Include="core\Render\Render.cpp" />
     <ClCompile Include="test.cpp" />
