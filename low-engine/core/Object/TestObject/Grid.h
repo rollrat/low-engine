@@ -4,34 +4,28 @@
 //
 //===----------------------------------------------------------------------===//
 //
-//  Render.h - 03/20/2018
+//  Grid.h - 03/25/2018
 //
 //  Copyright (C) 2018. rollrat. All Rights Reserved.
 //
 //===----------------------------------------------------------------------===//
 
-#ifndef _LOWENGINE_RENDER_
-#define _LOWENGINE_RENDER_
+#ifndef _LOWENGINE_GRID_
+#define _LOWENGINE_GRID_
 
-#include <glut.h>
-#include "Display.h"
+#include "../Object.h"
 
 namespace lowengine
 {
 
-class Render
+class Grid : public Object
 {
-  Display display;
 public:
 
-  Render();
-  void MainLoop();
+  void Draw();
 
-private:
-  void setupDrawCallback();
 };
 
 }
-
 
 #endif

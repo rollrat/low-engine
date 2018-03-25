@@ -70,7 +70,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(ProjectDir)\glutdlls37beta;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <IncludePath>C:\Users\rollrat\source\repos\low-engine\low-engine\core;$(ProjectDir)\glutdlls37beta;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir)\glutdlls37beta;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -121,14 +121,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="core\Display.h" />
-    <ClInclude Include="core\Interface.h" />
-    <ClInclude Include="core\Render.h" />
+    <ClInclude Include="core\Camera\Camera.h" />
+    <ClInclude Include="core\Camera\Polar.h" />
+    <ClInclude Include="core\Keyboard\Keyboard.h" />
+    <ClInclude Include="core\Object\TestObject\Box.h" />
+    <ClInclude Include="core\Object\TestObject\Grid.h" />
+    <ClInclude Include="core\Object\Object.h" />
+    <ClInclude Include="core\Object\TestObject\RGBBox.h" />
+    <ClInclude Include="core\Render\Display.h" />
+    <ClInclude Include="core\Render\Render.h" />
     <ClInclude Include="glutdlls37beta\glut.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="core\Display.cpp" />
-    <ClCompile Include="core\Render.cpp" />
+    <ClCompile Include="core\Camera\Camera.cpp" />
+    <ClCompile Include="core\Keyboard\Keyboard.cpp" />
+    <ClCompile Include="core\Object\TestObject\Box.cpp" />
+    <ClCompile Include="core\Object\TestObject\Grid.cpp" />
+    <ClCompile Include="core\Object\TestObject\RGBBox.cpp" />
+    <ClCompile Include="core\Render\Display.cpp" />
+    <ClCompile Include="core\Render\Render.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

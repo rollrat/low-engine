@@ -4,22 +4,32 @@
 //
 //===----------------------------------------------------------------------===//
 //
-//  Interface.h - 03/20/2018
+//  Render.h - 03/20/2018
 //
 //  Copyright (C) 2018. rollrat. All Rights Reserved.
 //
 //===----------------------------------------------------------------------===//
 
-#ifndef _LOWENGINE_INTERFACE_
-#define _LOWENGINE_INTERFACE_
+#ifndef _LOWENGINE_RENDER_
+#define _LOWENGINE_RENDER_
+
+#include <glut.h>
+#include "Display.h"
 
 namespace lowengine
 {
 
-class Object
+class Render
 {
+  Display display;
 public:
-  virtual void Draw() = 0;
+
+  Render();
+  void MainLoop();
+  Display& GetDisplay() { return display; }
+
+private:
+  void setupCallback();
 };
 
 }

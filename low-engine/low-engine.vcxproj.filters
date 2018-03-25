@@ -18,13 +18,31 @@
     <ClInclude Include="glutdlls37beta\glut.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="core\Render.h">
+    <ClInclude Include="core\Render\Display.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="core\Interface.h">
+    <ClInclude Include="core\Camera\Camera.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="core\Display.h">
+    <ClInclude Include="core\Object\Object.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="core\Render\Render.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="core\Camera\Polar.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="core\Keyboard\Keyboard.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="core\Object\TestObject\RGBBox.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="core\Object\TestObject\Grid.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="core\Object\TestObject\Box.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -32,10 +50,25 @@
     <ClCompile Include="test.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="core\Render.cpp">
+    <ClCompile Include="core\Render\Display.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="core\Display.cpp">
+    <ClCompile Include="core\Render\Render.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="core\Camera\Camera.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="core\Keyboard\Keyboard.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="core\Object\TestObject\RGBBox.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="core\Object\TestObject\Grid.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="core\Object\TestObject\Box.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

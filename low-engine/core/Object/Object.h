@@ -4,27 +4,22 @@
 //
 //===----------------------------------------------------------------------===//
 //
-//  Display.h - 03/20/2018
+//  Object.h - 03/25/2018
 //
 //  Copyright (C) 2018. rollrat. All Rights Reserved.
 //
 //===----------------------------------------------------------------------===//
 
-#ifndef _LOWENGINE_DISPLAY_
-#define _LOWENGINE_DISPLAY_
-
-#include <glut.h>
+#ifndef _LOWENGINE_OBJECT_
+#define _LOWENGINE_OBJECT_
 
 namespace lowengine
 {
 
-class Display
+class Object
 {
 public:
-
-  void Callback();
-
-
+  virtual void Draw() = 0;
 };
 
 }
