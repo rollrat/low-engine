@@ -24,6 +24,8 @@ static GLfloat x_polar, y_polar, z_polar;
 static GLfloat mouse_sensitivity;
 static GLfloat move_sensitivity;
 
+static GLfloat up_x, up_y, up_z;
+
 static bool free_point = false;
 
 lowengine::Camera::Camera()
@@ -33,6 +35,7 @@ lowengine::Camera::Camera()
   x_pin = 0.0; y_pin = 0.0;
   mouse_sensitivity = 0.07f;
   move_sensitivity = 0.05f;
+  up_x = 0.0; up_y = 1.0; up_z = 0.0;
   free_point = false;
 }
 
@@ -40,7 +43,7 @@ void lowengine::Camera::SetLookAt()
 {
   gluLookAt(eyex, eyey, eyez,
     eyex + x_polar, eyey + y_polar, eyez + z_polar,
-    0.0, 1.0, 0.0);
+    up_x, up_y, up_z);
 }
 
 void lowengine::Camera::SetPin(GLdouble xpin, GLdouble ypin)
@@ -100,6 +103,14 @@ void lowengine::Camera::MoveUp(int value)
 void lowengine::Camera::MoveDown(int value)
 {
   eyey -= move_sensitivity * value;
+}
+
+void lowengine::Camera::RotateLeft(int value)
+{
+}
+
+void lowengine::Camera::RotateRight(int value)
+{
 }
 
 void lowengine::Camera::SetFreePoint(bool type)

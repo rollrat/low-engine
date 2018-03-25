@@ -70,8 +70,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Users\rollrat\source\repos\low-engine\low-engine\core;$(ProjectDir)\glutdlls37beta;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
-    <LibraryPath>$(ProjectDir)\glutdlls37beta;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86</LibraryPath>
+    <IncludePath>$(ProjectDir)\glfw\include;$(ProjectDir)\glew\include;C:\Users\rollrat\source\repos\low-engine\low-engine\core;$(ProjectDir)\glut;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)\glew\lib-vc2015;$(ProjectDir)\glew\lib;$(ProjectDir)\glut;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -81,7 +81,7 @@
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(ProjectDir)\glutdlls37beta;</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)\glew\lib-vc2015;$(ProjectDir)\glut;$(ProjectDir)\glew\lib;</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -123,6 +123,7 @@
   <ItemGroup>
     <ClInclude Include="core\Camera\Camera.h" />
     <ClInclude Include="core\Camera\Polar.h" />
+    <ClInclude Include="core\File\Texture.h" />
     <ClInclude Include="core\Keyboard\Keyboard.h" />
     <ClInclude Include="core\Object\TestObject\Box.h" />
     <ClInclude Include="core\Object\TestObject\Grid.h" />
@@ -136,6 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="core\Camera\Camera.cpp" />
+    <ClCompile Include="core\File\Texture.cpp" />
     <ClCompile Include="core\Keyboard\Keyboard.cpp" />
     <ClCompile Include="core\Object\TestObject\Box.cpp" />
     <ClCompile Include="core\Object\TestObject\Grid.cpp" />

@@ -37,6 +37,9 @@ public:
     if (pitch > 179.9) pitch = 179.9;
     else if (pitch < 0.1) pitch = 0.1;
   }
+  void AddRoll(GLfloat offset) {
+    roll += offset;
+  }
 };
 
 }

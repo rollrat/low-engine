@@ -37,6 +37,8 @@ public:
   void MoveRight(int value);
   void MoveUp(int value);
   void MoveDown(int value);
+  void RotateLeft(int value);
+  void RotateRight(int value);
 
   void SetFreePoint(bool type);
 
