@@ -4,36 +4,32 @@
 //
 //===----------------------------------------------------------------------===//
 //
-//  Light.h - 03/26/2018
+//  Mirror.h - 03/26/2018
 //
 //  Copyright (C) 2018. rollrat. All Rights Reserved.
 //
 //===----------------------------------------------------------------------===//
 
+#ifndef _LOWENGINE_MIRROR_
+#define _LOWENGINE_MIRROR_
 
-#ifndef _LOWENGINE_LIGHT_
-#define _LOWENGINE_LIGHT_
-
-#include <gl\glew.h>
-#include <glut.h>
-#include "Display.h"
+#include "../Object.h"
 
 namespace lowengine
 {
 
-class Light
+class Mirror : public Object
 {
-  Display display;
+  float x, y, z;
 public:
 
-  Light();
-  void On();
+  Mirror() {}
+  Mirror(float x, float y, float z)
+    : x(x),y(y),z(z) { }
+  void Draw();
 
-private:
-  void setupCallback();
 };
 
 }
-
 
 #endif

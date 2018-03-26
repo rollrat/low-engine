@@ -4,36 +4,14 @@
 //
 //===----------------------------------------------------------------------===//
 //
-//  Light.h - 03/26/2018
+//  Mirror.cpp - 03/26/2018
 //
 //  Copyright (C) 2018. rollrat. All Rights Reserved.
 //
 //===----------------------------------------------------------------------===//
 
+#include "Mirror.h"
 
-#ifndef _LOWENGINE_LIGHT_
-#define _LOWENGINE_LIGHT_
-
-#include <gl\glew.h>
-#include <glut.h>
-#include "Display.h"
-
-namespace lowengine
+void lowengine::Mirror::Draw()
 {
-
-class Light
-{
-  Display display;
-public:
-
-  Light();
-  void On();
-
-private:
-  void setupCallback();
-};
-
 }
-
-
-#endif

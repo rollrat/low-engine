@@ -73,6 +73,10 @@
     <IncludePath>$(ProjectDir)\sfml\include;$(ProjectDir)\glfw\include;$(ProjectDir)\glew\include;C:\Users\rollrat\source\repos\low-engine\low-engine\core;$(ProjectDir)\glut;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir)\sfml\lib;$(ProjectDir)\glfw\lib-vc2015;$(ProjectDir)\glew\lib\Release\Win32;$(ProjectDir)\glut;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86</LibraryPath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>C:\Users\rollrat\source\repos\low-engine\low-engine\core;$(ProjectDir)\glut;$(ProjectDir)\sfml\include;$(ProjectDir)\glew\include;$(ProjectDir)\glfw\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)\glfw\lib-vc2015;$(ProjectDir)\sfml\lib;$(ProjectDir)\glut;$(ProjectDir)\glew\lib\Release\Win32;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -92,6 +96,12 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(ProjectDir)\glfw\lib-vc2015;$(ProjectDir)\sfml\lib;$(ProjectDir)\glut;$(ProjectDir)\glew\lib\Release\Win32;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glut32.lib;sfml-graphics-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>
+      </IgnoreAllDefaultLibraries>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -129,9 +139,13 @@
     <ClInclude Include="core\Object\TestObject\Box.h" />
     <ClInclude Include="core\Object\TestObject\Grid.h" />
     <ClInclude Include="core\Object\Object.h" />
+    <ClInclude Include="core\Object\TestObject\Mirror.h" />
     <ClInclude Include="core\Object\TestObject\RGBBox.h" />
     <ClInclude Include="core\Object\TestObject\Teapot.h" />
     <ClInclude Include="core\Object\TestObject\TexBox.h" />
+    <ClInclude Include="core\Object\TestObject\TexTile.h" />
+    <ClInclude Include="core\Object\TestObject\TexWall.h" />
+    <ClInclude Include="core\Object\TestObject\Wall.h" />
     <ClInclude Include="core\Object\Text.h" />
     <ClInclude Include="core\Render\Display.h" />
     <ClInclude Include="core\Render\Light.h" />
@@ -238,11 +252,16 @@
     <ClCompile Include="core\Keyboard\Keyboard.cpp" />
     <ClCompile Include="core\Object\TestObject\Box.cpp" />
     <ClCompile Include="core\Object\TestObject\Grid.cpp" />
+    <ClCompile Include="core\Object\TestObject\Mirror.cpp" />
     <ClCompile Include="core\Object\TestObject\RGBBox.cpp" />
     <ClCompile Include="core\Object\TestObject\Teapot.cpp" />
     <ClCompile Include="core\Object\TestObject\TexBox.cpp" />
+    <ClCompile Include="core\Object\TestObject\TexTile.cpp" />
+    <ClCompile Include="core\Object\TestObject\TexWall.cpp" />
+    <ClCompile Include="core\Object\TestObject\Wall.cpp" />
     <ClCompile Include="core\Object\Text.cpp" />
     <ClCompile Include="core\Render\Display.cpp" />
+    <ClCompile Include="core\Render\Light.cpp" />
     <ClCompile Include="core\Render\Render.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>

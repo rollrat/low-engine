@@ -4,36 +4,34 @@
 //
 //===----------------------------------------------------------------------===//
 //
-//  Light.h - 03/26/2018
+//  Wall.h - 03/26/2018
 //
 //  Copyright (C) 2018. rollrat. All Rights Reserved.
 //
 //===----------------------------------------------------------------------===//
 
+#ifndef _LOWENGINE_WALL_
+#define _LOWENGINE_WALL_
 
-#ifndef _LOWENGINE_LIGHT_
-#define _LOWENGINE_LIGHT_
-
-#include <gl\glew.h>
 #include <glut.h>
-#include "Display.h"
+#include "../Object.h"
 
 namespace lowengine
 {
 
-class Light
+class Wall : public Object
 {
-  Display display;
+  float x, y, z;
+  float width, height;
 public:
 
-  Light();
-  void On();
+  Wall() {}
+  Wall(float x, float y, float z, float width, float height)
+    : x(x), y(y), z(z), width(width), height(height) { }
+  void Draw();
 
-private:
-  void setupCallback();
 };
 
 }
-
 
 #endif

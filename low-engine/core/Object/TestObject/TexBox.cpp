@@ -18,23 +18,24 @@ void lowengine::TexBox::Draw()
 {
   glTranslatef(x, y, z);
 
- //glBindBuffer(GL_ARRAY_BUFFER, 0);
- //glBindVertexArray(0);
- //
- //glBindFramebuffer(GL_FRAMEBUFFER, tex.GetId());
- //glBindFramebuffer(GL_FRAMEBUFFER, 0);
-
   glEnable(GL_BLEND);
   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
   glEnable(GL_TEXTURE_2D);
   glBindTexture(GL_TEXTURE_2D, tex.GetId());
 
-  //glBegin(GL_QUADS);
-  //  glTexCoord2f(0.0, 0.0); glVertex2f(0, 0);
-  //  glTexCoord2f(1.0, 0.0); glVertex2f(10.0, 0);
-  //  glTexCoord2f(1.0, 1.0); glVertex2f(10.0, 10.0);
-  //  glTexCoord2f(0.0, 1.0); glVertex2f(0, 10.0);
-  //glEnd();
+  /*glBegin(GL_QUADS);
+    glTexCoord2f(0.0, 0.0); glVertex2f(0, 0);
+    glTexCoord2f(1.0, 0.0); glVertex2f(10.0, 0);
+    glTexCoord2f(1.0, 1.0); glVertex2f(10.0, 10.0);
+    glTexCoord2f(0.0, 1.0); glVertex2f(0, 10.0);
+  glEnd();*/
+  
+  /*glBegin(GL_QUADS);
+    glVertex3f(-100, 0, -100);
+    glVertex3f(100, 0, -100);
+    glVertex3f(100, 0, 100);
+    glVertex3f(-100, 0, 100);
+  glEnd();*/
 
   glBegin(GL_QUADS);
     //////////////////////////////////////////////////////////////// Front Face

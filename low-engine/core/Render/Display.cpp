@@ -23,6 +23,7 @@ void lowengine::Display::Initialize()
   glEnable(GL_DEPTH_TEST);
   glDepthFunc(GL_LEQUAL);
   glShadeModel(GL_SMOOTH);
+  glFrontFace(GL_CCW);
   glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
   glutSetCursor(GLUT_CURSOR_NONE);
   
@@ -81,7 +82,7 @@ void lowengine::Display::adjustPerspective()
 {
   glMatrixMode(GL_PROJECTION);
   glLoadIdentity();
-  gluPerspective(45.0f, (GLfloat)width / (GLfloat)height, 0.1f, 100.0f);
+  gluPerspective(45.0f, (GLfloat)width / (GLfloat)height, 0.1f, 1000.0f);
 }
 
 void lowengine::Display::processKeyboardMove()

@@ -342,6 +342,18 @@
     <ClInclude Include="core\Object\TestObject\TexBox.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="core\Object\TestObject\Mirror.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="core\Object\TestObject\Wall.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="core\Object\TestObject\TexWall.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="core\Object\TestObject\TexTile.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test.cpp">
@@ -378,6 +390,21 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="core\Object\TestObject\TexBox.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="core\Object\TestObject\Mirror.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="core\Render\Light.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="core\Object\TestObject\Wall.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="core\Object\TestObject\TexWall.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="core\Object\TestObject\TexTile.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

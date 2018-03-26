@@ -4,36 +4,23 @@
 //
 //===----------------------------------------------------------------------===//
 //
-//  Light.h - 03/26/2018
+//  Wall.cpp - 03/26/2018
 //
 //  Copyright (C) 2018. rollrat. All Rights Reserved.
 //
 //===----------------------------------------------------------------------===//
 
+#include "Wall.h"
 
-#ifndef _LOWENGINE_LIGHT_
-#define _LOWENGINE_LIGHT_
-
-#include <gl\glew.h>
-#include <glut.h>
-#include "Display.h"
-
-namespace lowengine
+void lowengine::Wall::Draw()
 {
+  glTranslatef(x, y, z);
 
-class Light
-{
-  Display display;
-public:
-
-  Light();
-  void On();
-
-private:
-  void setupCallback();
-};
-
+  glBegin(GL_QUADS);
+    glNormal3f(0, 0, 1);
+    glVertex3f(0, 0, 0);
+    glVertex3f(0, 0, width);
+    glVertex3f(0, height, width);
+    glVertex3f(0, height, 0);
+  glEnd();
 }
-
-
-#endif

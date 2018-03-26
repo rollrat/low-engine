@@ -36,7 +36,7 @@ lowengine::Camera::Camera()
   mouse_sensitivity = 0.07f;
   move_sensitivity = 0.05f;
   up_x = 0.0; up_y = 1.0; up_z = 0.0;
-  free_point = true;
+  free_point = false;
 }
 
 void lowengine::Camera::SetLookAt()

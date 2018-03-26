@@ -1,0 +1,4 @@
+x86
+lib: $(ProjectDir)\glfw\lib-vc2015;$(ProjectDir)\sfml\lib;$(ProjectDir)\glut;$(ProjectDir)\glew\lib\Release\Win32;
+inc: $(ProjectDir)\glut;$(ProjectDir)\sfml\include;$(ProjectDir)\glew\include;$(ProjectDir)\glfw\include;$(IncludePath)
+sfml-graphics-d.lib;glew32.lib;glew32s.lib;%(AdditionalDependencies)
