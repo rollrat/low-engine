@@ -26,7 +26,7 @@ static GLfloat move_sensitivity;
 
 static GLfloat up_x, up_y, up_z;
 
-static bool free_point = false;
+static bool free_point;
 
 lowengine::Camera::Camera()
 {
@@ -36,7 +36,7 @@ lowengine::Camera::Camera()
   mouse_sensitivity = 0.07f;
   move_sensitivity = 0.05f;
   up_x = 0.0; up_y = 1.0; up_z = 0.0;
-  free_point = false;
+  free_point = true;
 }
 
 void lowengine::Camera::SetLookAt()

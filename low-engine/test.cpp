@@ -15,6 +15,9 @@
 #include <Object\TestObject\RGBBox.h>
 #include <Object\TestObject\Grid.h>
 #include <Object\TestObject\Box.h>
+#include <Object\TestObject\Teapot.h>
+#include <Object\TestObject\TexBox.h>
+#include <File\Texture.h>
 
 using namespace lowengine;
 
@@ -33,5 +36,16 @@ int main(int argc, char** argv)
       for (int k = 0; k < 10; k++)
         display.AddObject(new Box(i+5.0, j, k+5.0));
 
+  display.AddObject(new Teapot());
+
+  Texture tex;
+  tex.LoadTexture("back.png");
+  TexBox *texbox = new TexBox(-5.0, -5.0, -5.0);
+  texbox->SetTexture(tex);
+
+  display.AddObject(texbox);
+
+
   render.MainLoop();
+
 }

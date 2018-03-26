@@ -10,51 +10,56 @@
 //
 //===----------------------------------------------------------------------===//
 
-#include <gl/glew.h>
-#include <glfw/glfw3.h>
+#include <GL/glew.h>
 
 #include "Texture.h"
 
 #include <stdio.h>
+#include <SFML/Graphics/Image.hpp>
 
 // https://stackoverflow.com/a/12524013/3355656
-GLuint lowengine::Texture::LoadTexture(const char * filename)
+bool lowengine::Texture::LoadTexture(std::string path)
 {
-  GLuint texture;
-  int width, height;
-  unsigned char * data;
-  FILE * file;
+  sf::Image image;
 
-  fopen_s(&file, filename, "rb");
-
-  if (file == NULL) return 0;
-  width = 512;
-  height = 512;
-  data = new unsigned char[width * height * 3];
-  fread(data, width * height * 3, 1, file);
-  fclose(file);
-
-  for (int i = 0; i < width * height; ++i)
+  if (!image.loadFromFile(path))
   {
-    int index = i * 3;
-    unsigned char B, R;
-    B = data[index];
-    R = data[index + 2];
-
-    data[index] = R;
-    data[index + 2] = B;
-
+    return false;
   }
 
-  glGenTextures(1, &texture);
-  glBindTexture(GL_TEXTURE_2D, texture);
-  glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
-  glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_NEAREST);
+  /*glGenTextures(1, &id);
+  glBindTexture(GL_TEXTURE_2D, id);
 
-  glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-  glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-  glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-  gluBuild2DMipmaps(GL_TEXTURE_2D, 3, width, height, GL_RGB, GL_UNSIGNED_BYTE, data);
-  delete[] data;
-  return texture;
+  glTexImage2D(GL_TEXTURE_2D,
+    0,
+    GL_RGBA,
+    image.getSize().x,
+    image.getSize().y,
+    0,
+    GL_RGBA,
+    GL_UNSIGNED_BYTE,
+    image.getPixelsPtr());
+
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);*/
+
+  glGenTextures(1, &id);
+  glBindTexture(GL_TEXTURE_2D, id);
+
+  glTexImage2D(
+    GL_TEXTURE_2D, 0, GL_RGBA,
+    image.getSize().x, image.getSize().y, 0,
+    GL_RGBA, GL_UNSIGNED_BYTE,
+    image.getPixelsPtr()
+  );
+
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+  glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
+
+
+  return 0;// texture = 0;
 }

@@ -14,17 +14,19 @@
 #define _LOWENGINE_TEXTURE_
 
 #include <glut.h>
+#include <string>
 
 namespace lowengine
 {
 
 class Texture
 {
+  GLuint id;
 public:
 
-private:
-
-  GLuint LoadTexture(const char *filename);
+  bool LoadTexture(std::string path);
+  GLuint GetId() const { return id; }
+  
 };
 
 }
