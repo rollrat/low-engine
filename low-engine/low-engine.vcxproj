@@ -141,6 +141,7 @@
     <ClInclude Include="core\Object\Object.h" />
     <ClInclude Include="core\Object\TestObject\Mirror.h" />
     <ClInclude Include="core\Object\TestObject\RGBBox.h" />
+    <ClInclude Include="core\Object\TestObject\Sphere.h" />
     <ClInclude Include="core\Object\TestObject\Teapot.h" />
     <ClInclude Include="core\Object\TestObject\TexBox.h" />
     <ClInclude Include="core\Object\TestObject\TexTile.h" />
@@ -150,6 +151,7 @@
     <ClInclude Include="core\Render\Display.h" />
     <ClInclude Include="core\Render\Light.h" />
     <ClInclude Include="core\Render\Render.h" />
+    <ClInclude Include="core\Render\SpotLight.h" />
     <ClInclude Include="glutdlls37beta\glut.h" />
     <ClInclude Include="sfml\include\SFML\Audio.hpp" />
     <ClInclude Include="sfml\include\SFML\Audio\AlResource.hpp" />
@@ -254,6 +256,7 @@
     <ClCompile Include="core\Object\TestObject\Grid.cpp" />
     <ClCompile Include="core\Object\TestObject\Mirror.cpp" />
     <ClCompile Include="core\Object\TestObject\RGBBox.cpp" />
+    <ClCompile Include="core\Object\TestObject\Sphere.cpp" />
     <ClCompile Include="core\Object\TestObject\Teapot.cpp" />
     <ClCompile Include="core\Object\TestObject\TexBox.cpp" />
     <ClCompile Include="core\Object\TestObject\TexTile.cpp" />
@@ -263,6 +266,7 @@
     <ClCompile Include="core\Render\Display.cpp" />
     <ClCompile Include="core\Render\Light.cpp" />
     <ClCompile Include="core\Render\Render.cpp" />
+    <ClCompile Include="core\Render\SpotLight.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>
   <ItemGroup>

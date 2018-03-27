@@ -22,11 +22,12 @@ void lowengine::TexTile::Draw()
   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
   glEnable(GL_TEXTURE_2D);
   glBindTexture(GL_TEXTURE_2D, tex.GetId());
+  glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
 
   glBegin(GL_QUADS);
-    glNormal3f(0, 0, 1);
     if (pattern)
     {
+      glNormal3f(0, -1, 0);
       glTexCoord2f(0.0, 0.0); glVertex3f(0, 0, 0);
       glTexCoord2f(height*tile_x, 0.0); glVertex3f(0, 0, width);
       glTexCoord2f(height*tile_x, width*tile_x); glVertex3f(height, 0, width);
@@ -34,11 +35,17 @@ void lowengine::TexTile::Draw()
     }
     else
     {
+      glNormal3f(0, -1, 0);
       glTexCoord2f(0.0, 0.0); glVertex3f(0, 0, 0);
       glTexCoord2f(1.0, 0.0); glVertex3f(0, 0, width);
       glTexCoord2f(1.0, 1.0); glVertex3f(height, 0, width);
       glTexCoord2f(0.0, 1.0); glVertex3f(height, 0, 0);
     }
+    /*glNormal3f(0, -1, 0);
+    glVertex3f(0, 0, 0);
+    glVertex3f(0, 0, width);
+    glVertex3f(height, 0, width);
+    glVertex3f(height, 0, 0);*/
   glEnd();
 
   glDisable(GL_TEXTURE_2D);

@@ -17,27 +17,29 @@
 #include <Object\TestObject\Box.h>
 #include <Object\TestObject\Teapot.h>
 #include <Object\TestObject\TexBox.h>
+#include <Object\TestObject\Wall.h>
 #include <Object\TestObject\TexWall.h>
 #include <Object\TestObject\TexTile.h>
+#include <Object\TestObject\Sphere.h>
 #include <File\Texture.h>
 
 using namespace lowengine;
 
 int main(int argc, char** argv) 
 {
-  Render render;
+  Render render(argc, argv);
   Display& display = render.GetDisplay();
 
   //display.AddObject(new RGBBox());
   //display.AddObject(new Grid());
 
-  for (int i = 0; i < 10; i++)
-    for (int j = 0; j < 10; j++)
-      for (int k = 0; k < 10; k++)
-        display.AddObject(new Box(i+5.0, j, k+5.0));
-
-  display.AddObject(new Teapot());
-  //display.AddObject(new Wall(0.0,-0.5,0.0, 10.0,10.0));
+  //for (int i = 0; i < 10; i++)
+  //  for (int j = 0; j < 10; j++)
+  //    for (int k = 0; k < 10; k++)
+  //      display.AddObject(new Box(i+5.0, j, k+5.0));
+  //
+  //display.AddObject(new Teapot());
+  //display.AddObject(new Wall(-5.0,0.0,-5.0, 10.0,10.0));
 
   /*Texture tex;
   tex.LoadTexture("back.png");
@@ -72,6 +74,17 @@ int main(int argc, char** argv)
   suntile->SetPattern(false);
   suntile->SetTexture(sun);
   display.AddObject(suntile);
+
+  Sphere *sphere;// = new Sphere(2.0, 2.0, 2.0);
+  //display.AddObject(sphere);
+   sphere = new Sphere(2.0, 2.0, 0.0);
+  display.AddObject(sphere);
+  sphere = new Sphere(2.0, 2.0, -2.0);
+  display.AddObject(sphere);
+  sphere = new Sphere(2.0, 2.0, 4.0);
+  display.AddObject(sphere);
+  sphere = new Sphere(2.0, 2.0, 6.0);
+  display.AddObject(sphere);
 
 
   render.MainLoop();

@@ -34,7 +34,7 @@ lowengine::Camera::Camera()
   x_polar = 0.0; y_polar = 0.0; z_polar = 0.0;
   x_pin = 0.0; y_pin = 0.0;
   mouse_sensitivity = 0.07f;
-  move_sensitivity = 0.05f;
+  move_sensitivity = 0.1f;
   up_x = 0.0; up_y = 1.0; up_z = 0.0;
   free_point = false;
 }
@@ -116,6 +116,12 @@ void lowengine::Camera::RotateRight(int value)
 void lowengine::Camera::SetFreePoint(bool type)
 {
   free_point = type;
+}
+
+std::string lowengine::Camera::to_string()
+{
+  return std::to_string(eyex) + "," + std::to_string(eyey) + "," + std::to_string(eyez)
+    + "," + std::to_string(polar.GetPitch()) + "," + std::to_string(polar.GetYaw());
 }
 
 void lowengine::Camera::updatePolar()

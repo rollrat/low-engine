@@ -13,8 +13,12 @@
 #include "Display.h"
 
 #include <Object\Text.h>
+#include "SpotLight.h"
 
 GLfloat fps;
+
+lowengine::SpotLight light;
+
 
 void lowengine::Display::Initialize()
 {
@@ -23,10 +27,12 @@ void lowengine::Display::Initialize()
   glEnable(GL_DEPTH_TEST);
   glDepthFunc(GL_LEQUAL);
   glShadeModel(GL_SMOOTH);
+  //glEnable(GL_CULL_FACE);
   glFrontFace(GL_CCW);
   glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
   glutSetCursor(GLUT_CURSOR_NONE);
-  
+  light.Init();
+
   camera.SetPin((GLfloat)width / 2, (GLfloat)height/2);
 }
 
@@ -36,19 +42,29 @@ void lowengine::Display::DisplayCallback()
 
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
   glMatrixMode(GL_MODELVIEW);
+  glLoadIdentity();
+  glEnable(GL_LIGHTING);
+
+  glPushMatrix();
+  camera.SetLookAt();
+  light.On();
 
   // TODO: dsiplay processing
   for (auto& obj : display_objs)
   {
-    glLoadIdentity();
-    camera.SetLookAt();
+    glPushMatrix();
     obj->Draw();
+    glPopMatrix();
   }
+  glPopMatrix();
 
+  glDisable(GL_LIGHTING);
   if (print_fps)
   {
     (new RasterText(0.0,10.0,0.0,width,height,std::string("FPS: ")+std::to_string(fps)))->Draw();
+    (new RasterText(0.0,25.0, 0.0, width, height, camera.to_string()))->Draw();
   }
+  glEnable(GL_LIGHTING);
 
   glutSwapBuffers();
 }

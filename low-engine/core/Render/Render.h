@@ -25,7 +25,7 @@ class Render
   Display display;
 public:
 
-  Render();
+  Render(int argc, char** argv);
   void MainLoop();
   Display& GetDisplay() { return display; }
 

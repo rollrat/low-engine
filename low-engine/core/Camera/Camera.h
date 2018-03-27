@@ -15,6 +15,7 @@
 
 #include <glut.h>
 #include "Polar.h"
+#include <string>
 
 namespace lowengine
 {
@@ -41,6 +42,8 @@ public:
   void RotateRight(int value);
 
   void SetFreePoint(bool type);
+
+  std::string to_string();
 
 private:
 

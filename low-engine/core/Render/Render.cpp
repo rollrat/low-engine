@@ -12,12 +12,12 @@
 
 #include "Render.h"
 
-lowengine::Render::Render()
+lowengine::Render::Render(int argc, char** argv)
 {
-  //glutInit(&argc, argv);
+  glutInit(&argc, argv);
   glutInitWindowPosition(400, 200);
   glutInitWindowSize(400, 300);
-  glutInitDisplayMode(GLUT_DOUBLE);
+  glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
   glutCreateWindow("OpenGL");
 
   setupCallback();

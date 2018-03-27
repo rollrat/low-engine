@@ -21,6 +21,7 @@ void lowengine::TexWall::Draw()
   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
   glEnable(GL_TEXTURE_2D);
   glBindTexture(GL_TEXTURE_2D, tex.GetId());
+  glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
 
   glBegin(GL_QUADS);
     glNormal3f(0, 0, 1);

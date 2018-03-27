@@ -4,28 +4,24 @@
 //
 //===----------------------------------------------------------------------===//
 //
-//  Light.h - 03/26/2018
+//  SpotLight.h - 03/26/2018
 //
 //  Copyright (C) 2018. rollrat. All Rights Reserved.
 //
 //===----------------------------------------------------------------------===//
 
+#ifndef _LOWENGINE_SPOTLIGHT_
+#define _LOWENGINE_SPOTLIGHT_
 
-#ifndef _LOWENGINE_LIGHT_
-#define _LOWENGINE_LIGHT_
-
-#include <gl\glew.h>
 #include <glut.h>
-#include "Display.h"
 
 namespace lowengine
 {
 
-class Light
+class SpotLight
 {
 public:
 
-  Light();
   void Init();
   void On();
 

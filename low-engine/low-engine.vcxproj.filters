@@ -354,6 +354,12 @@
     <ClInclude Include="core\Object\TestObject\TexTile.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="core\Render\SpotLight.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="core\Object\TestObject\Sphere.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test.cpp">
@@ -405,6 +411,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="core\Object\TestObject\TexTile.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="core\Render\SpotLight.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="core\Object\TestObject\Sphere.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

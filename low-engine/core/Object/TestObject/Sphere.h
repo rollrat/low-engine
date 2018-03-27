@@ -4,35 +4,32 @@
 //
 //===----------------------------------------------------------------------===//
 //
-//  Light.h - 03/26/2018
+//  Sphere.h - 03/27/2018
 //
 //  Copyright (C) 2018. rollrat. All Rights Reserved.
 //
 //===----------------------------------------------------------------------===//
 
+#ifndef _LOWENGINE_SPHERE_
+#define _LOWENGINE_SPHERE_
 
-#ifndef _LOWENGINE_LIGHT_
-#define _LOWENGINE_LIGHT_
-
-#include <gl\glew.h>
-#include <glut.h>
-#include "Display.h"
+#include "../Object.h"
 
 namespace lowengine
 {
 
-class Light
+class Sphere : public Object
 {
+  float x, y, z;
 public:
 
-  Light();
-  void Init();
-  void On();
+  Sphere() {}
+  Sphere(float x, float y, float z)
+    : x(x),y(y),z(z) { }
+  void Draw();
 
-private:
 };
 
 }
-
 
 #endif
