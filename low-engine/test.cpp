@@ -68,12 +68,12 @@ int main(int argc, char** argv)
   textile->SetTexture(tile);
   display.AddObject(textile);
 
-  Texture sun;
-  sun.LoadTexture("sun.jpg");
-  TexTile *suntile = new TexTile(-50.0, 100.0, -50.0, 100.0, 100.0);
-  suntile->SetPattern(false);
-  suntile->SetTexture(sun);
-  display.AddObject(suntile);
+  //Texture sun;
+  //sun.LoadTexture("sun.jpg");
+  //TexTile *suntile = new TexTile(-50.0, 100.0, -50.0, 100.0, 100.0);
+  //suntile->SetPattern(false);
+  //suntile->SetTexture(sun);
+  //display.AddObject(suntile);
 
   Sphere *sphere;// = new Sphere(2.0, 2.0, 2.0);
   //display.AddObject(sphere);

@@ -46,6 +46,8 @@ void lowengine::SpotLight::Init()
   glLightfv(GL_LIGHT0, GL_SPOT_DIRECTION, dirVector0);
   glLightf(GL_LIGHT0, GL_SPOT_EXPONENT, 10.0); // set focusing strength
 
+  glLightModeli(GL_LIGHT_MODEL_LOCAL_VIEWER, GL_TRUE);
+
   //glMaterialfv(GL_FRONT, GL_SPECULAR, qaSpecularLight);
   //glMaterialf(GL_FRONT, GL_SHININESS, 100);
   /*glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, qaWhite);
@@ -71,4 +73,8 @@ void lowengine::SpotLight::On()
   glEnable(GL_LIGHTING);
   glPopMatrix();
 
+  glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, qaWhite);
+  glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, qaWhite);
+  glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, qaWhite);
+  glMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, 100);
 }
