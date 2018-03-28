@@ -24,7 +24,7 @@ void lowengine::TexTile::Draw()
   glBindTexture(GL_TEXTURE_2D, tex.GetId());
   glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
 
-  int   tiles = 100;
+  int   tiles = 50;
   float u_max = height * tile_x;
   float v_max = width * tile_x;
 
@@ -42,10 +42,15 @@ void lowengine::TexTile::Draw()
       y0 = (float)y / (float)tiles;
       y1 = (float)(y + 1) / (float)tiles;
 
-      glTexCoord2f(u_max*x0, v_max*y0);  glVertex3f(height*x0, 0, width*y0);
-      glTexCoord2f(u_max*x1, v_max*y0);  glVertex3f(height*x0, 0, width*y1);
-      glTexCoord2f(u_max*x1, v_max*y1);  glVertex3f(height*x1, 0, width*y1);
-      glTexCoord2f(u_max*x0, v_max*y1);  glVertex3f(height*x1, 0, width*y0);
+      glTexCoord2f(0.0, 0.0); glVertex3f(height*x0, 0, width*y0);
+      glTexCoord2f(1.0, 0.0); glVertex3f(height*x0, 0, width*y1);
+      glTexCoord2f(1.0, 1.0); glVertex3f(height*x1, 0, width*y1);
+      glTexCoord2f(0.0, 1.0); glVertex3f(height*x1, 0, width*y0);
+
+       /*glTexCoord2f(u_max*x0, v_max*y0);
+       glTexCoord2f(u_max*x1, v_max*y0);
+       glTexCoord2f(u_max*x1, v_max*y1);
+       glTexCoord2f(u_max*x0, v_max*y1);*/
     }
   }
   glEnd();

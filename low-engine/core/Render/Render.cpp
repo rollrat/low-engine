@@ -19,11 +19,28 @@ lowengine::Render::Render(int argc, char** argv)
   glutInitWindowSize(400, 300);
   glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
   glutCreateWindow("OpenGL");
+  //glfwInit();
+  //glfwWindowHint(GLFW_SAMPLES, 4);
+  //glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+  //glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+  //glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+  //glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+  //
+  //GLFWwindow* window=glfwCreateWindow(400, 300, "Low engine", NULL, NULL);
+  //glfwMakeContextCurrent(window);
+  //glewExperimental = true;
+  //
+  //glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
+  //do {
+  //  glfwSwapBuffers(window);
+  //  glfwPollEvents();
+  //
+  //}
+  //while (glfwGetKey(window, GLFW_KEY_ESCAPE) != GLFW_PRESS &&
+  //  glfwWindowShouldClose(window) == 0);
 
   setupCallback();
-
   display.Initialize();
-
   glewInit();
 }
 

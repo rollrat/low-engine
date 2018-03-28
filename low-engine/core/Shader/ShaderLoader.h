@@ -4,34 +4,29 @@
 //
 //===----------------------------------------------------------------------===//
 //
-//  Render.h - 03/20/2018
+//  ShaderLoader.h - 03/28/2018
 //
 //  Copyright (C) 2018. rollrat. All Rights Reserved.
 //
 //===----------------------------------------------------------------------===//
 
-#ifndef _LOWENGINE_RENDER_
-#define _LOWENGINE_RENDER_
+#ifndef _LOWENGINE_SHADERLOADER_
+#define _LOWENGINE_SHADERLOADER_
 
-#include <gl\glew.h>
-#include <GLFW\glfw3.h>
-#include <glut.h>
-#include "Display.h"
+#include <gl/glew.h>
+#include <string>
 
 namespace lowengine
 {
 
-class Render
+class ShaderLoader
 {
-  Display display;
+  std::string ReadShader(char *filename); 
+  GLuint CreateShader(GLenum shaderType, std::string source, const char* shaderName);
+
 public:
 
-  Render(int argc, char** argv);
-  void MainLoop();
-  Display& GetDisplay() { return display; }
-
-private:
-  void setupCallback();
+  GLuint CreateProgram(char* VertexShaderFilename, char* FragmentShaderFilename);
 };
 
 }

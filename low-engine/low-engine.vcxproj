@@ -86,7 +86,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(ProjectDir)\sfml\lib;$(ProjectDir)\gfw\lib-vc2015;$(ProjectDir)\glut;$(ProjectDir)\glew\lib\Release\Win32</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-graphics-d.lib;glew32.lib;glew32s.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib;sfml-graphics-d.lib;glew32.lib;glew32s.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -152,6 +152,7 @@
     <ClInclude Include="core\Render\Light.h" />
     <ClInclude Include="core\Render\Render.h" />
     <ClInclude Include="core\Render\SpotLight.h" />
+    <ClInclude Include="core\Shader\ShaderLoader.h" />
     <ClInclude Include="glutdlls37beta\glut.h" />
     <ClInclude Include="sfml\include\SFML\Audio.hpp" />
     <ClInclude Include="sfml\include\SFML\Audio\AlResource.hpp" />
@@ -267,6 +268,7 @@
     <ClCompile Include="core\Render\Light.cpp" />
     <ClCompile Include="core\Render\Render.cpp" />
     <ClCompile Include="core\Render\SpotLight.cpp" />
+    <ClCompile Include="core\Shader\ShaderLoader.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>
   <ItemGroup>
